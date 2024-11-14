@@ -14,7 +14,7 @@
     <div id="keys">
       <button onclick="clearScreen()" class="ops">C</button>
       <button onclick="appendToCalculation('/')" class="ops">/</button>
-      <button onclick="calculateResult()" class="ops">=</button>
+      <button onclick="appendToCalculation('%')" class="ops">%</button>
       <button onclick="appendToCalculation('*')" class="ops">&times;</button>
       <button onclick="appendToCalculation('7')">7</button>
       <button onclick="appendToCalculation('8')">8</button>
@@ -31,6 +31,7 @@
       <button onclick="appendToCalculation('e')">e</button>
       <button onclick="appendToCalculation('0')">0</button>
       <button onclick="appendToCalculation('.')">.</button>
+      <button onclick="calculateResult()" class="ops">=</button>
 
     </div>
   </div>
