@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="align-items: center; display: flex; justify-content: center;">
+  <div id="container" >
+    <input id="display" readonly style="color: white; font-size: 35px;">
+    <div id="keys">
+      <button onclick="clearScreen()" class="ops">C</button>
+      <button onclick="appendToCalculation('/')" class="ops">/</button>
+      <button onclick="calculateResult()" class="ops">=</button>
+      <button onclick="appendToCalculation('*')" class="ops">&times;</button>
+      <button onclick="appendToCalculation('7')">7</button>
+      <button onclick="appendToCalculation('8')">8</button>
+      <button onclick="appendToCalculation('9')">9</button>
+      <button onclick="appendToCalculation('-')" class="ops">-</button>
+      <button onclick="appendToCalculation('4')">4</button>
+      <button onclick="appendToCalculation('5')">5</button>
+      <button onclick="appendToCalculation('6')">6</button>
+      <button onclick="appendToCalculation('+')" class="ops">+</button>
+      <button onclick="appendToCalculation('1')">1</button>
+      <button onclick="appendToCalculation('2')">2</button>
+      <button onclick="appendToCalculation('3')">3</button>
+      <button onclick="appendToCalculation('%')" class="ops">%</button>
+      <button onclick="appendToCalculation('e')">e</button>
+      <button onclick="appendToCalculation('0')">0</button>
+      <button onclick="appendToCalculation('.')">.</button>
+
+    </div>
+  </div>
+
+  <script>
+    let calculation = "";
+
+    function appendToCalculation(value) {
+      calculation += value;
+      updateScreen();
+    }
+
+    function updateScreen() {
+      document.getElementById('display').value = calculation;
+    }
+
+    function clearScreen() {
+      calculation = "";
+      updateScreen();
+    }
+
+    function calculateResult() {
+      try {
+        calculation = eval(calculation).toString();
+        updateScreen();
+      } catch (e) {
+        calculation = 'Error';
+        updateScreen();
+      }
+    }
+  </script>
+</body>
+
+</html>
