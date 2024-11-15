@@ -14,6 +14,7 @@
     width: 91%;
     border-radius: 15px;
     overflow: hidden;
+    text-align:end;
 }
 
 #keys {
